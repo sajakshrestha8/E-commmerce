@@ -1,0 +1,25 @@
+.product-card{
+    display: grid;
+    grid-template-rows: 1fr 0.3fr 0.1fr;
+    /* border-radius: 8px; */
+    padding: 10px;
+    transition: 0.3s ease;
+    border-bottom: 1px solid rgb(39, 39, 39);
+}
+
+.product-card:hover{
+    background-color: rgba(1,112,180,.08);
+    border: 1px solid #0170b4;
+    padding: 4px;
+}
+
+.product-img-wrapper{
+    height: 16rem;
+    width: 100%;
+    column-gap: 10px;
+    border-radius: 8px;
+}
+
+.product-img{
+    border-radius: 8px;
+}

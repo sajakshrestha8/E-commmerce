@@ -1,0 +1,27 @@
+.navigation-wrapper{
+    display: grid;
+    grid-template-columns: 0.5fr 1.3fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.logo-wrapper{
+    height: 80px;
+    width: 80px;
+}
+
+.nav-terms{
+    text-align: right;
+}
+
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

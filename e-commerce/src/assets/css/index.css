@@ -1,0 +1,13 @@
+@import "./root.css";
+@import "./Components/navigation.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import "./Components/product-card.css";
+@import "./Components/app.css";
+@import "./Components/banner.css";
+
+body{
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+     font-family: "Inter", sans-serif;
+}
