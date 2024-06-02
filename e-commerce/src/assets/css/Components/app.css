@@ -4,3 +4,8 @@
     row-gap: 2rem;
     margin-top: 3rem;
 }
+
+.link{
+    text-decoration: none;
+    color: rgb(76, 75, 75);
+}

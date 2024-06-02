@@ -23,19 +23,23 @@ export default function App() {
       <Navigation />
       <Banner />
       <div className="product-container">
-        {data?.map((value, index) => {
-          return (
-            <div key={index}>
-              <Link to={"/product/" + value.id}>
-                <Products
-                  img={value.image}
-                  name={value.title}
-                  price={value.price}
-                />
-              </Link>
-            </div>
-          );
-        })}
+        {data
+          // ?.filter((value, index) => {
+          // return data === "" ? value : value.title.includes(data);
+          // })
+          ?.map((value, index) => {
+            return (
+              <div key={index}>
+                <Link to={"/product/" + value.id} className="link">
+                  <Products
+                    img={value.image}
+                    name={value.title}
+                    price={value.price}
+                  />
+                </Link>
+              </div>
+            );
+          })}
       </div>
     </>
   );
