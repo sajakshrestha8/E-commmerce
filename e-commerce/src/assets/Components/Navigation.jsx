@@ -2,22 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../Photos/Logo.jpg";
 import { useEffect, useState } from "react";
 
-export default function Navigation() {
-  const [searchData, setSearchData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapiserver.reactbd.com/amazonproducts")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setSearchData(data);
-      });
-  }, []);
-
-  const search = (e) => {
-    console.log(e.target.value);
-  };
+export default function Navigation(props) {
   return (
     <>
       <div className="navigation-wrapper">
@@ -29,10 +14,8 @@ export default function Navigation() {
             type="search"
             className="search-bar"
             placeholder="search for anything ..."
-            onChange={search}
+            onChange={props.search}
           ></input>
-
-          {searchData?.filter((value, index) => {})}
         </div>
         <div className="nav">
           <div className="nav-terms">Login</div>

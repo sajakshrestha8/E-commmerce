@@ -8,38 +8,52 @@ import { Link } from "react-router-dom";
 
 export default function App() {
   const [data, setData] = useState([]);
+  const [searchedItem, setsearchedItem] = useState("");
+  const [filteredItem, setFilterdItem] = useState();
 
   useEffect(() => {
-    fetch("https://fakestoreapiserver.reactbd.com/amazonproducts")
+    fetch("https://fakestoreapi.com/products")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         setData(data);
+        setFilterdItem(data);
       });
   }, []);
+
+  useEffect(() => {
+    if (!searchedItem) return;
+
+    const filterdData = data.filter((item) => {
+      return item.title.includes(searchedItem);
+    });
+    setFilterdItem(filterdData);
+  }, [searchedItem, data]);
+
   return (
     <>
-      <Navigation />
+      <Navigation
+        search={(e) => {
+          const searcheddata = e.target.value;
+          setsearchedItem(searcheddata);
+        }}
+      />
       <Banner />
       <div className="product-container">
-        {data
-          // ?.filter((value, index) => {
-          // return data === "" ? value : value.title.includes(data);
-          // })
-          ?.map((value, index) => {
-            return (
-              <div key={index}>
-                <Link to={"/product/" + value.id} className="link">
-                  <Products
-                    img={value.image}
-                    name={value.title}
-                    price={value.price}
-                  />
-                </Link>
-              </div>
-            );
-          })}
+        {filteredItem?.map((value, index) => {
+          return (
+            <div key={index}>
+              <Link to={"/product/" + value.id} className="link">
+                <Products
+                  img={value.image}
+                  name={value.title}
+                  price={value.price}
+                />
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </>
   );
