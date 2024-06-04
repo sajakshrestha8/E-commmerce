@@ -13,7 +13,7 @@ export default function Router() {
         <Route path="/product/:id" element={<Desc />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route element={<PrivateRouters />}>
-          <Route path="/" element={<App />} exact />
+          <Route path="/" element={<App />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

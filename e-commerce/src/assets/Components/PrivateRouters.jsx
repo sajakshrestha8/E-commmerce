@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 export default function PrivateRouters() {
-  const auth = { token: false };
-  return auth.token ? <Outlet /> : <Navigate to="/login" />;
+  const [isAuth, setIsAuth] = useState(false);
+
+  return isAuth ? <Outlet /> : <Navigate to="/login" />;
 }
