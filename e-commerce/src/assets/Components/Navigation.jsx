@@ -7,7 +7,9 @@ export default function Navigation(props) {
     <>
       <div className="navigation-wrapper">
         <div className="logo-wrapper">
-          <img src={Logo}></img>
+          <Link to={"/"}>
+            <img src={Logo}></img>
+          </Link>
         </div>
         <div>
           <input

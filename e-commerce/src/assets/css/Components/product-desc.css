@@ -1,0 +1,107 @@
+.desc-wrapper{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    column-gap: 2rem;
+}
+
+.rating-img{
+    height: 20px;
+    width: 20px;
+    fill: red;
+}
+
+a{
+    color: #007185;    
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(217, 141, 0);
+}
+
+.product-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.rating-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1.9fr;
+}
+
+.rate{
+    display: grid;
+    grid-template-columns: 1fr 1.9fr;
+}
+
+.price{
+    font-size: 20px;
+    color: #B12704;
+}
+
+.product-description{
+    margin-top: 15px;
+}
+
+.description{
+    margin-left: 10px;
+    color: rgb(81, 81, 81);
+}
+
+.product-img{
+    height: 100%;
+    width: 100%;
+}
+
+.manage-item{
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    font-size: 25px;
+    transition: 0.3s ease;
+}
+
+.manage-item:hover{
+    background-color: #e5e5e5;
+}
+
+.quantity{
+    color: rgb(62, 60, 60);
+}
+
+.quantity-number{
+    margin-left: 10px;
+}
+
+.buy-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.buy{
+    width: 80%;
+    height: 2rem;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(2, 158, 189);
+    color: white;
+}
+
+.buttons-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+
+.add-cart{
+    width: 80%;
+    height: 2rem;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(224, 116, 1);
+    color: white;
+}

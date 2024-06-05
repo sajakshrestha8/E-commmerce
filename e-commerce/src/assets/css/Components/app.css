@@ -9,3 +9,10 @@
     text-decoration: none;
     color: rgb(76, 75, 75);
 }
+
+.product-heading{
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    padding: 10px;
+}

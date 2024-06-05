@@ -4,6 +4,7 @@
 @import "./Components/product-card.css";
 @import "./Components/app.css";
 @import "./Components/banner.css";
+@import "./Components/product-desc.css";
 
 body{
     max-width: 85%;

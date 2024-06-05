@@ -19,6 +19,7 @@ export default function App() {
       .then((data) => {
         setData(data);
         setFilterdItem(data);
+        localStorage.setItem("ApiData", JSON.stringify(data));
       });
   }, []);
 
@@ -40,6 +41,7 @@ export default function App() {
         }}
       />
       <Banner />
+      <div className="product-heading">Top Products</div>
       <div className="product-container">
         {filteredItem?.map((value, index) => {
           return (
