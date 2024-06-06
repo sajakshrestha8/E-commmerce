@@ -46,6 +46,9 @@ export default function Desc() {
   };
 
   const Cart = () => {
+    // const storedItems = localStorage.getItem("AddedData");
+    // const addedItemArray = [storedItems];
+
     const addeditem = {
       image: desc.image,
       name: desc.title,
@@ -54,6 +57,8 @@ export default function Desc() {
       total: desc.price * item,
     };
     console.log(addeditem);
+
+    // addedItemArray.push(addeditem);
     localStorage.setItem("AddedData", JSON.stringify(addeditem));
     addedToCart();
   };
@@ -112,11 +117,9 @@ export default function Desc() {
             <div className="buy-buttons">
               <button className="buy">Buy Now</button>
 
-              <Link to={"/cart"}>
-                <button className="add-cart" onClick={Cart}>
-                  Add to Cart
-                </button>
-              </Link>
+              <button className="add-cart" onClick={Cart}>
+                Add to Cart
+              </button>
             </div>
             <div></div>
           </div>
@@ -146,6 +149,7 @@ export default function Desc() {
 
       {/* Category section */}
 
+      <div className="product-heading">Related Products</div>
       <div className="product-container">
         {realtedData.map((value, index) => {
           return (
@@ -162,8 +166,8 @@ export default function Desc() {
         })}
       </div>
       <ToastContainer
-        position="top-right"
-        autoClose={2000}
+        position="bottom-right"
+        autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

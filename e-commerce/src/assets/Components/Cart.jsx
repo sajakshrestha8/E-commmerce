@@ -1,21 +1,38 @@
 import { useEffect, useState } from "react";
 import Navigation from "./Navigation";
-import Demo from "../../Photos/demo-cart.jpg";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Cart() {
   const [cartItem, setCartItem] = useState(null);
+  const deleteNotice = () =>
+    toast("Item has been deleted successfully! Refresh to see");
 
   useEffect(() => {
     const storedItem = localStorage.getItem("AddedData");
-    setCartItem(JSON.parse(storedItem));
+
+    if (storedItem) {
+      setCartItem(JSON.parse(storedItem));
+    }
   }, []);
 
   if (!cartItem) {
-    return <>Nothing in cart</>;
+    return (
+      <>
+        <Navigation />
+        <div className="noitems-conatiner">
+          <div>There is no any items in cart!!!</div>
+          <Link to={"/"}>
+            <button className="continue-btn">Continue Shopping</button>
+          </Link>
+        </div>
+      </>
+    );
   }
 
   const del = () => {
     localStorage.removeItem("AddedData");
+    deleteNotice();
   };
 
   console.log(cartItem);
@@ -39,6 +56,18 @@ export default function Cart() {
         </div>
         <div className="cart-info">
           <button onClick={del}>Delete</button>
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </div>
         <div className="cart-info">
           <label>$ {cartItem.total}</label>
