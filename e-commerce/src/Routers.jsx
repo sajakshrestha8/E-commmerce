@@ -11,13 +11,14 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
+          path="/cart"
           element={
             <PrivateRouters>
-              <App />
+              <Cart />
             </PrivateRouters>
           }
         ></Route>
+        <Route path="/" element={<App />}></Route>
         <Route path="/product/:id" element={<Desc />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>

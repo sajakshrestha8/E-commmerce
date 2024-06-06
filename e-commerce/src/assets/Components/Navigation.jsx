@@ -24,7 +24,9 @@ export default function Navigation(props) {
           <Link to={"/login"} className="link">
             <div className="nav-terms">Sign Up</div>
           </Link>
-          <div className="nav-terms">Cart</div>
+          <Link to={"/cart"}>
+            <div className="nav-terms">Cart</div>
+          </Link>
         </div>
       </div>
     </>

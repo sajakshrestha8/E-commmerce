@@ -3,8 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import Navigation from "./Navigation";
 import Rating from "../../Photos/star_24dp_FILL0_wght400_GRAD0_opsz24.png";
 import Products from "./Product-Card";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Desc() {
+  const addedToCart = () =>
+    toast(item + desc.title + "added successfully to the Cart successfully");
+
   const [desc, setDesc] = useState({});
   const [realtedData, setRealtedData] = useState([]);
   const params = useParams();
@@ -50,6 +55,7 @@ export default function Desc() {
     };
     console.log(addeditem);
     localStorage.setItem("AddedData", JSON.stringify(addeditem));
+    addedToCart();
   };
 
   return (
@@ -105,9 +111,12 @@ export default function Desc() {
           <div className="buttons-wrapper">
             <div className="buy-buttons">
               <button className="buy">Buy Now</button>
-              <Link to={"/cart"}><button className="add-cart" onClick={Cart}>
-                Add to Cart
-              </button></Link>
+
+              <Link to={"/cart"}>
+                <button className="add-cart" onClick={Cart}>
+                  Add to Cart
+                </button>
+              </Link>
             </div>
             <div></div>
           </div>
@@ -152,6 +161,18 @@ export default function Desc() {
           );
         })}
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 }
