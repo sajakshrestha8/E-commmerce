@@ -3,4 +3,4 @@ This is the e-commerce website created by using React for the frontend and dummy
 
 
 Want to visit the site??
-Here is the link for you :- sajak-store.netlify.app
+Here is the link for you :- (sajak-store.netlify.app)
